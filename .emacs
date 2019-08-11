@@ -8,10 +8,7 @@
 
 ;; Setup some load paths
 (add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'load-path "~/.emacs.d/matlab-emacs/matlab-emacs")
-
-;; Setup clearcase mode
-;(load "clearcase")
+;(add-to-list 'load-path "~/.emacs.d/matlab-emacs/matlab-emacs")
 
 ;; Setup Verilog mode
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t)
@@ -37,10 +34,10 @@
       )
 
 ;; Setup Matlab mode
-(autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
-(add-to-list 'auto-mode-alist '("\\.m$" . matlab-mode))
-(setq matlab-indent-function t)
-(setq matlab-shell-command "matlab")
+;(autoload 'matlab-mode "matlab" "Matlab Editing Mode" t)
+;(add-to-list 'auto-mode-alist '("\\.m$" . matlab-mode))
+;(setq matlab-indent-function t)
+;(setq matlab-shell-command "matlab")
 
 ;; Setup some variables
 (setq require-final-newline t)		;add newline when saving file
@@ -51,7 +48,6 @@
 (global-set-key [f4] `query-replace-regexp)
 (global-set-key [f5] (lambda () (interactive) (shell)))
 
-(global-set-key [f6] (lambda () (interactive) (load-library "clearcase")))
 (global-set-key [f7] `compile)
 (global-set-key [f8] `recompile)
 
@@ -85,6 +81,7 @@
 ;; Standard indent to 2 rather than 4
 ;(setq standard-indent 2)
 ;(setq-default c-basic-offset 4)
+(c-set-offset 'substatement-open 0)
 
 ;; Mouse wheel scrolling
 (mouse-wheel-mode t)
@@ -105,21 +102,13 @@
 
 ;; Setup color theme
 ;(require 'color-theme)
-;(color-theme-classic)
-(require 'color-theme-solarized)
-(color-theme-solarized-dark)
+;(require 'color-theme-solarized)
+;(color-theme-solarized-dark)
 
 ;; Alt key as Meta in OVDC
 ;(setq x-alt-keysym 'meta)
 
-;; CPP mode
-(c-set-offset 'substatement-open 0)
-
-;; Enable auto-fill for .smf
-(add-to-list 'auto-mode-alist '("\\.smf'" . auto-fill-mode))
-(add-to-list 'auto-mode-alist '("\\.rly'" . auto-fill-mode))
-
-;; NO backup~
+;; No backup file~
 (setq make-backup-files nil)
 
 ;; Hide toolbar, menu bar, scroll bar
