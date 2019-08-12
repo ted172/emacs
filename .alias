@@ -1,0 +1,22 @@
+alias xl='$HOME/bin/xilinx_license.sh'
+alias hh='history'
+alias gr='grep -nPr --color=auto'
+alias ff='find . -name'
+
+alias vhc='vhier --nomissing --cells'
+alias vhf='vhier --nomissing --module-files'
+
+alias ods='libreoffice --calc'
+alias odt='libreoffice --writer'
+alias odg='libreoffice --draw'
+
+alias at_home='cd $HOME/.ssh && ln -fs config.at_home config'
+alias at_work='cd $HOME/.ssh && ln -fs config.at_work config'
+
+alias svs='svn st | grep -v '?''
+alias oct='octave -p ../../system/matlab_files/Simulation --eval'
+alias sim='xsim my_snap -noieeewarnings -R'
+alias svX='rm -f `svn st | sed -e 's/^\\?//'`'
+
+em() { emacs  -g 100x75 $@ & }
+rd() { evince $@ & }
